@@ -49,7 +49,8 @@ const parseBody = (text: string, header: Header = {}): Content[] => {
       };
     }
 
-    const [namePair, message] = line.split(": ");
+    const [namePair, ...residue] = line.split(": ");
+    const message = residue.join(": ");
 
     if (namePair.startsWith("/")) {
       const name = eliminateFirstLetter(namePair);

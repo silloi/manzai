@@ -78,7 +78,7 @@ narrators:
 
 Socrates: All men are mortal
 
-Plato: Socrates is a man
+Plato: Socrates: a man
 
 /Socrates: Therefore, Socrates is mortal
 
@@ -104,11 +104,11 @@ describe("text2 has a header", () => {
     expect(contents[0].media).toBeUndefined();
   });
 
-  test("the subjective speaks with an avatar", () => {
+  test("the subjective speaks with an avatar and has an another colon in narrative", () => {
     expect(contents[1].type).toBe(MESSAGE_TYPE.SUBJECTIVE);
     expect(contents[1].name).toBe("Plato");
     expect(contents[1].avatar).toBe("https://example.com/image/plato");
-    expect(contents[1].message).toBe("Socrates is a man");
+    expect(contents[1].message).toBe("Socrates: a man");
     expect(contents[1].media).toBeUndefined();
   });
 
