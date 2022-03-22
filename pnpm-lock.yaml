@@ -8,15 +8,20 @@ specifiers:
   '@rollup/plugin-node-resolve': ^13.1.3
   '@rollup/plugin-typescript': ^8.3.1
   '@types/jest': ^27.4.1
+  '@types/js-yaml': ^4.0.5
   '@typescript-eslint/eslint-plugin': ^5.14.0
   '@typescript-eslint/parser': ^5.14.0
   eslint: ^8.11.0
   jest: ^27.5.1
+  js-yaml: ^4.1.0
   rollup: ^2.70.0
   rollup-plugin-terser: ^7.0.2
   ts-jest: ^27.1.3
   tslib: ^2.3.1
   typescript: ^4.6.2
+
+dependencies:
+  js-yaml: 4.1.0
 
 devDependencies:
   '@babel/core': 7.17.5
@@ -26,6 +31,7 @@ devDependencies:
   '@rollup/plugin-node-resolve': 13.1.3_rollup@2.70.0
   '@rollup/plugin-typescript': 8.3.1_41ab6d1a9136403886ea2fa83d07712f
   '@types/jest': 27.4.1
+  '@types/js-yaml': 4.0.5
   '@typescript-eslint/eslint-plugin': 5.14.0_ace6f9e7722b813e21eaf2dc993bc413
   '@typescript-eslint/parser': 5.14.0_eslint@8.11.0+typescript@4.6.2
   eslint: 8.11.0
@@ -1636,6 +1642,10 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
+  /@types/js-yaml/4.0.5:
+    resolution: {integrity: sha512-FhpRzf927MNQdRZP0J5DLIdTXhjLYzeUTmLAu69mnVksLH9CJY3IuSeEgbKUki7GQZm0WqDkGzyxju2EZGD2wA==}
+    dev: true
+
   /@types/json-schema/7.0.9:
     resolution: {integrity: sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==}
     dev: true
@@ -1895,7 +1905,6 @@ packages:
 
   /argparse/2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
-    dev: true
 
   /array-union/2.1.0:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
@@ -3407,7 +3416,6 @@ packages:
     hasBin: true
     dependencies:
       argparse: 2.0.1
-    dev: true
 
   /jsdom/16.7.0:
     resolution: {integrity: sha512-u9Smc2G1USStM+s/x1ru5Sxrl6mPYCbByG1U/hUmqaVsm4tbNyS7CicOSRyuGQYZhTu0h84qkZZQ/I+dzizSVw==}

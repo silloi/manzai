@@ -1,9 +1,9 @@
 export type ParsedText = {
   header: { [key: string]: string | object },
-  contents: Message[],
+  contents: Content[],
 };
 
-export type Message = {
+export type Content = {
   type?: number,
   name?: string,
   message?: string,
