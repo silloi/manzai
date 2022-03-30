@@ -37,7 +37,10 @@
     "url": "git+https://github.com/silloi/manzai.git"
   },
   "keywords": [
-    "markup"
+    "parser",
+    "markup",
+    "dialogue",
+    "narrative"
   ],
   "author": "silloi",
   "license": "MIT",
