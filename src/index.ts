@@ -1,5 +1,5 @@
 import { parseText } from "./parse";
 
-export {
-  parseText as parse,
+export default {
+  parseText,
 };
