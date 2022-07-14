@@ -12,7 +12,7 @@ Socrates: All men are mortal
 Socrates is dead
 
 [https://placeholder.com/400]
-`
+`;
 
 describe("text1 has no header", () => {
   const result = parse(text1);
@@ -85,7 +85,7 @@ Plato: Socrates: a man
 \\Plato: Socrates is dead
 
 Socrates: [https://placeholder.com/400]
-`
+`;
 
 describe("text2 has a header", () => {
   const result = parse(text2);
@@ -134,5 +134,27 @@ describe("text2 has a header", () => {
     expect(contents[4].avatar).toBe("https://example.com/image/socrates");
     expect(contents[4].message).toBeUndefined();
     expect(contents[4].media).toBe("https://placeholder.com/400");
+  });
+
+  test("text3 has an attribute", () => {
+    expect(contents[4].type).toBe(MESSAGE_TYPE.OBJECTIVE);
+    expect(contents[4].name).toBe("Socrates");
+    expect(contents[4].avatar).toBe("https://example.com/image/socrates");
+    expect(contents[4].message).toBeUndefined();
+    expect(contents[4].media).toBe("https://placeholder.com/400");
+  });
+});
+
+const text3 = `
+[12:34] Plato: Socrates was born.
+`;
+
+describe("text3 has an attribute", () => {
+  const result = parse(text3);
+  const contents = result.contents;
+
+  test("the descriptive has an attribute", () => {
+    expect(contents[0].attribute).toBe("12:34");
+    expect(contents[0].message).toBe("Socrates was born.");
   });
 });

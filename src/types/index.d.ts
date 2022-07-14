@@ -3,7 +3,7 @@ import { MESSAGE_TYPE } from "../enums";
 export type ParsedText = {
   header?: Header;
   contents: Content[];
-}
+};
 
 export type Header = { [key: string]: string | Content[] };
 
@@ -13,4 +13,5 @@ export type Content = {
   avatar?: string;
   message?: string;
   media?: string;
-}
+  attribute?: string;
+};

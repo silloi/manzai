@@ -24,6 +24,12 @@ You can add a back slash `\` in front of the name, representing that the narrato
 \Socrates: Therefore, Socrates is mortal
 ```
 
+You can also add an attribute in front of the name by wrapping it in brackets `[ ]`,
+
+```manzai
+[12:34] Plato: Socrates was born.
+```
+
 Without a name, the sentence represents that it is directive.
 
 ```manzai
@@ -90,13 +96,14 @@ A `header` contains properties which is declared in a YAML front matter block.
 
 Each content in `contents` has properties as below:
 
-| property | type     |
-| -------- | -------- |
-| name     |  string  |
-| type     |  number  |
-| avatar   |  string  |
-| message  |  string  |
-| media    |  string  |
+| property  | type   |
+| --------- | ------ |
+| name      | string |
+| type      | number |
+| avatar    | string |
+| message   | string |
+| media     | string |
+| attribute | string |
 
 ## Licence
 

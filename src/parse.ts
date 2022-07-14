@@ -49,8 +49,16 @@ const parseBody = (text: string, header: Header = {}): Content[] => {
       };
     }
 
-    const [namePair, ...residue] = line.split(": ");
+    const [namePairConst, ...residue] = line.split(": ");
+    let namePair = namePairConst;
     const message = residue.join(": ");
+
+    let attribute = undefined;
+    if (namePair.startsWith("[") && namePair.includes("]")) {
+      const [attr, body] = namePair.replace("[", "").split("]");
+      attribute = attr;
+      namePair = body.trim();
+    }
 
     if (namePair.startsWith("/")) {
       const name = eliminateFirstLetter(namePair);
@@ -59,6 +67,7 @@ const parseBody = (text: string, header: Header = {}): Content[] => {
         name: name,
         type: MESSAGE_TYPE.SUBJECTIVE,
         avatar: assignAvatar(header, name),
+        attribute: attribute,
         ...parseMessage(message),
       };
     }
@@ -70,6 +79,7 @@ const parseBody = (text: string, header: Header = {}): Content[] => {
         name: name,
         type: MESSAGE_TYPE.OBJECTIVE,
         avatar: assignAvatar(header, name),
+        attribute: attribute,
         ...parseMessage(message),
       };
     }
@@ -78,9 +88,10 @@ const parseBody = (text: string, header: Header = {}): Content[] => {
       name: namePair,
       type: assignType(header, namePair) ?? MESSAGE_TYPE.OBJECTIVE,
       avatar: assignAvatar(header, namePair),
+      attribute: attribute,
       ...parseMessage(message),
     };
-  })
+  });
 
   return parsedLines;
 };
